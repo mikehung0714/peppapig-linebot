@@ -3,7 +3,7 @@ from flask import Flask, request, abort
 from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
-
+import twder
 app = Flask(__name__)
 
 # 設定你的Channel Access Token
@@ -36,12 +36,17 @@ def handle_message(event):
 		message = TextSendMessage(text='hello')
 	elif send == '哈囉':
 		message = TextSendMessage(text='good bye')
+	elif send == 'Roy':
+		message = TextSendMessage(text=send +'是笨蛋!')
+	elif send == '日幣' or send == 'JPY' or send == 'roy':
+		message = TextSendMessage(text='日幣匯率是'+twder.now('JPY')[3])
 	else:
 		message = TextSendMessage(text=event.message.text)
 	line_bot_api.reply_message(event.reply_token, message)
 
 
 '''
+print(twder.now('JPY')[3])
 你好>hello
 哈囉>good bye
 其他>回傳一樣
