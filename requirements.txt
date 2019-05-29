@@ -1,5 +1,6 @@
 line-bot-sdk
 twder
+six
 flask
 requests
 bs4
