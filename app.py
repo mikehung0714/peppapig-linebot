@@ -44,7 +44,12 @@ def handle_message(event):
 		message = TextSendMessage(text=event.message.text)
 	line_bot_api.reply_message(event.reply_token, message)
 
-
+@handler.add(MessageEvent, message=LocationMessage)
+def handle_message(event):
+	lat = event.message.latitude
+	lon = event.message.longitude
+	message = TextSendMessage(text='經緯度是 :'+str(lon)+','+str(lat))\
+	line_bot_api.reply_message(event.reply_token, message)
 '''
 print(twder.now('JPY')[3])
 你好>hello
