@@ -9,7 +9,7 @@ def Roy(lat,lon):
 		if r['cod']==200:
 			reply += ('最低溫:'+str(r['main']['temp_min'])+'\t'+'最高溫:'+str(r['main']['temp_max']))+'\n'
 			reply += ('天氣狀況:'+r['weather'][0]['description'])+'\n'
-			reply += ('日出:'+str(time.strftime("%H:%M:%S",time.localtime(r['sys']['sunrise'])))+'\t'+'日落:'+str(time.strftime("%H:%M:%S",time.localtime(r['sys']['sunset']))))+'\n'
+			reply += ('日出:'+str(time.strftime("%H:%M:%S",time.localtime(r['sys']['sunrise']+28800‬)))+'\t'+'日落:'+str(time.strftime("%H:%M:%S",time.localtime(r['sys']['sunset']+28800‬))))+'\n'
 		elif r['cod']=="404":
 			reply += (r['message'])
 	except:
