@@ -4,6 +4,8 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 import twder
+import function.OWM
+
 app = Flask(__name__)
 
 # 設定你的Channel Access Token
@@ -48,7 +50,7 @@ def handle_message(event):
 def handle_message(event):
 	lat = event.message.latitude
 	lon = event.message.longitude
-	message = TextSendMessage(text='經緯度是 :'+str(lon)+','+str(lat))
+	message = TextSendMessage(text=OWM.Roy(lat,lon))
 	line_bot_api.reply_message(event.reply_token, message)
 '''
 print(twder.now('JPY')[3])
