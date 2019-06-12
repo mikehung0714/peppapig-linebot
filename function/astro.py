@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def star(n):
+	global reply
 	reply += ('★'*n + '☆'*(5-n))+'\n'
 
 
