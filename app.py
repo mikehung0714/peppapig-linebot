@@ -5,6 +5,7 @@ from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 import twder
 from function.OWM import Roy
+from function.astro import *
 
 app = Flask(__name__)
 
@@ -38,12 +39,16 @@ def handle_message(event):
 		message = TextSendMessage(text='hello')
 	elif send == '哈囉':
 		message = TextSendMessage(text='good bye')
-	elif send == 'Roy':
+	elif send == 'Roy' or send == 'roy':
 		message = TextSendMessage(text=send +'是笨蛋!')
-	elif send == '日幣' or send == 'JPY' or send == 'roy':
+	elif send == '日幣' or send == 'JPY':
 		message = TextSendMessage(text='日幣匯率是'+twder.now('JPY')[3])
-	else:
-		message = TextSendMessage(text=event.message.text)
+	elif send == '星座':
+		message = TextSendMessage(text='選擇星座:[1]牡羊 [2]金牛 [3]雙子 [4]巨蟹 [5]獅子 [6]處女 [7]天秤 [8]天蠍 [9]射手 [10]摩羯 [11]水瓶 [12]雙魚')
+
+	if int(send) <= 12:
+		message = TextSendMessage(text=astroScore(send))
+		
 	line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=LocationMessage)
