@@ -10,16 +10,16 @@ def astroScore(select):
 	web.enconding = 'UTF-8'
 	reply = ''
 	soup = BeautifulSoup(web.text, "html.parser")
-	reply += ('整體運' ,end='')
+	reply += ('整體運')
 	star(int(soup.select('#astroDailyScore_all')[0]['style'][-6:-5:1]))
 	reply += (soup.select('#astroDailyData_all')[0].text)+'\n'
 
 
-	reply += ('事業運' ,end='')
+	reply += ('事業運')
 	star(int(soup.select('#astroDailyScore_career')[0]['style'][-6:-5:1]))
 	reply += (soup.select('#astroDailyData_career')[0].text)+'\n'
 
-	reply += ('財富運' ,end='')
+	reply += ('財富運')
 	star(int(soup.select('#astroDailyScore_money')[0]['style'][-6:-5:1]))
 	reply += (soup.select('#astroDailyData_money')[0].text)+'\n'
 
