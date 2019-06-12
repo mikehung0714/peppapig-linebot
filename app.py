@@ -45,10 +45,9 @@ def handle_message(event):
 		message = TextSendMessage(text='日幣匯率是'+twder.now('JPY')[3])
 	elif send == '星座':
 		message = TextSendMessage(text='選擇星座:[1]牡羊 [2]金牛 [3]雙子 [4]巨蟹 [5]獅子 [6]處女 [7]天秤 [8]天蠍 [9]射手 [10]摩羯 [11]水瓶 [12]雙魚')
-
-	if int(send) <= 12:
+	if send.isdigit() and int(send) <= 12:
 		message = TextSendMessage(text=astroScore(send))
-		
+
 	line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=LocationMessage)
