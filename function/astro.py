@@ -9,6 +9,7 @@ def star(n):
 def astroScore(select):
 	web = requests.get('https://m.click108.com.tw/astro/index.php?astroNum='+select)
 	web.enconding = 'UTF-8'
+	global reply
 	reply = ''
 	soup = BeautifulSoup(web.text, "html.parser")
 	reply += ('整體運')
