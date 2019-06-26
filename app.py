@@ -89,9 +89,9 @@ def handle_message(event):
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='http://moregames.io/images/games/starblast-io.png',
-						title='STARBLAST.IO',
-						text='操控飛船',
+						thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
+						title='Krunker.io',
+						text='射擊遊戲',
 						actions=[
 							URIAction(
 								label='開始遊玩',
