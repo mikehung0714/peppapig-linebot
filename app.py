@@ -37,6 +37,7 @@ def handle_message(event):
 	send = event.message.text
 	if send == '你好':
 		userID = event.source.user_id
+		StickerSendMessage(package_id='11537',sticker_id='52002745')
 		line_bot_api.push_message(userID,TextSendMessage(text='拿到你的ID'))
 		message = TextSendMessage(text='hello: '+userID)
 	elif send == '哈囉':
