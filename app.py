@@ -98,6 +98,17 @@ def handle_message(event):
 								uri='https://krunker.io'
 							)
 						]
+					),
+					CarouselColumn(
+						thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
+						title='Krunker.io',
+						text='射擊遊戲',
+						actions=[
+							URIAction(
+								label='開始遊玩',
+								uri='https://krunker.io'
+							)
+						]
 					)
 				]
 			)
