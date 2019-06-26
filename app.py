@@ -37,7 +37,8 @@ def handle_message(event):
 	send = event.message.text
 	if send == '你好':
 		userID = event.source.user_id
-		message = TextSendMessage(text='hello'+userID)
+		line_bot_api.push_message(userID,TextSendMessage(text='拿到你的ID'))
+		message = TextSendMessage(text='hello: '+userID)
 	elif send == '哈囉':
 		message = TextSendMessage(text='good bye')
 	elif send == 'Roy' or send == 'roy':
