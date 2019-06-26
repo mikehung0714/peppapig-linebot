@@ -49,6 +49,7 @@ def handle_message(event):
 	elif send == '星座':
 		message = TextSendMessage(text='選擇星座:[1]牡羊 [2]金牛 [3]雙子 [4]巨蟹 [5]獅子 [6]處女 [7]天秤 [8]天蠍 [9]射手 [10]摩羯 [11]水瓶 [12]雙魚')
 	elif send == '遊戲':
+		'''
 		message = TemplateSendMessage(
 			alt_text='Krunker.io\nhttps://krunker.io\nslither.io\nhttp://slither.io/\nSTARBLAST.IO\nhttps://starblast.io/',
 			template=ButtonsTemplate(
@@ -67,6 +68,47 @@ def handle_message(event):
 					URIAction(
 						label='STARBLAST.IO',
 						uri='https://starblast.io/'
+					)
+				]
+			)
+		)
+		'''
+		message = TemplateSendMessage(
+			alt_text='Carousel template',
+			template=CarouselTemplate(
+				columns=[
+					CarouselColumn(
+						thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
+						title='Krunker.io',
+						text='射擊遊戲',
+						actions=[
+							URIAction(
+								label='開始遊玩',
+								uri='https://krunker.io'
+							)
+						]
+					),
+					CarouselColumn(
+						thumbnail_image_url='http://slither.io/s/fbthumb3.jpg',
+						title='slither.io',
+						text='貪吃蛇',
+						actions=[
+							URIAction(
+								label='開始遊玩',
+								uri='http://slither.io/'
+							)
+						]
+					),
+					CarouselColumn(
+						thumbnail_image_url='http://moregames.io/images/games/starblast-io.png',
+						title='STARBLAST.IO',
+						text='操控飛船',
+						actions=[
+							URIAction(
+								label='開始遊玩',
+								uri='https://starblast.io/'
+							)
+						]
 					)
 				]
 			)
