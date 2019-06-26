@@ -98,6 +98,17 @@ def handle_message(event):
 								uri='http://slither.io/'
 							)
 						]
+					),
+					CarouselColumn(
+						thumbnail_image_url='http://moregames.io/images/games/starblast-io.png',
+						title='STARBLAST.IO',
+						text='操控飛船',
+						actions=[
+							URIAction(
+								label='開始遊玩',
+								uri='https://starblast.io/'
+							)
+						]
 					)
 				]
 			)
