@@ -89,17 +89,6 @@ def handle_message(event):
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='http://slither.io/s/fbthumb3.jpg',
-						title='slither.io',
-						text='貪吃蛇',
-						actions=[
-							URIAction(
-								label='開始遊玩',
-								uri='http://slither.io/'
-							)
-						]
-					),
-					CarouselColumn(
 						thumbnail_image_url='http://moregames.io/images/games/starblast-io.png',
 						title='STARBLAST.IO',
 						text='操控飛船',
