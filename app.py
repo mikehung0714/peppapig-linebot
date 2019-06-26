@@ -56,19 +56,11 @@ def handle_message(event):
 	lon = event.message.longitude
 	message = TextSendMessage(text=Roy(lat,lon))
 	line_bot_api.reply_message(event.reply_token, message)
-'''
-print(twder.now('JPY')[3])
-你好>hello
-哈囉>good bye
-其他>回傳一樣
-'''
 
-'''
-@handler.add(MessageEvent, message=LocationMessage)
+@handler.add(MessageEvent, message=StickerMessage)
 def handle_message(event):
-	message = TextSendMessage(text='我是佩佩豬機器人')
+	message = StickerSendMessage(package_id='11537',sticker_id='52002767')
 	line_bot_api.reply_message(event.reply_token, message)
-'''
 
 import os
 if __name__ == "__main__":
