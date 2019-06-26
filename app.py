@@ -48,6 +48,29 @@ def handle_message(event):
 		message = TextSendMessage(text='日幣匯率是'+twder.now('JPY')[3])
 	elif send == '星座':
 		message = TextSendMessage(text='選擇星座:[1]牡羊 [2]金牛 [3]雙子 [4]巨蟹 [5]獅子 [6]處女 [7]天秤 [8]天蠍 [9]射手 [10]摩羯 [11]水瓶 [12]雙魚')
+	elif send == '遊戲':
+		message = TemplateSendMessage(
+			alt_text='Krunker.io\nhttps://krunker.io\nslither.io\nhttp://slither.io/\nSTARBLAST.IO\nhttps://starblast.io/',
+			template=ButtonsTemplate(
+				thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
+				title='遊戲選擇',
+				text='請選擇要玩的遊戲',
+				actions=[
+					URIAction(
+						label='Krunker.io',
+						uri='https://krunker.io'
+					),
+					URIAction(
+						label='slither.io',
+						uri='http://slither.io/'
+					),
+					URIAction(
+						label='STARBLAST.IO',
+						uri='https://starblast.io/'
+					)
+				]
+			)
+		)
 	if send.isdigit() and int(send) <= 12:
 		message = TextSendMessage(text=astroScore(send))
 
