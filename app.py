@@ -89,24 +89,24 @@ def handle_message(event):
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
-						title='Krunker.io',
-						text='射擊遊戲',
+						thumbnail_image_url='https://edgeup.asus.com/wp-content/uploads/2016/05/thumbnail-3edce8c4b813004a352d229e6ecbbc98-696x420-1.png',
+						title='slither.io',
+						text='貪吃蛇',
 						actions=[
 							URIAction(
 								label='開始遊玩',
-								uri='https://krunker.io'
+								uri='http://slither.io/'
 							)
 						]
 					),
 					CarouselColumn(
-						thumbnail_image_url='https://grizix.com/media/177/krunker-io.jpg',
-						title='Krunker.io',
-						text='射擊遊戲',
+						thumbnail_image_url='https://cdn.titotu.io/images/games/starblast-io-1280x720.jpg',
+						title='STARBLAST.IO',
+						text='戰艦遊戲',
 						actions=[
 							URIAction(
 								label='開始遊玩',
-								uri='https://krunker.io'
+								uri='https://starblast.io/'
 							)
 						]
 					)
