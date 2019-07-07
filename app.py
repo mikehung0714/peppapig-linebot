@@ -95,7 +95,7 @@ def handle_message(event):
 						actions=[
 							URIAction(
 								label='開始遊玩',
-								uri='http://slither.io/'
+								uri='http://slither.io'
 							)
 						]
 					),
@@ -106,7 +106,7 @@ def handle_message(event):
 						actions=[
 							URIAction(
 								label='開始遊玩',
-								uri='https://starblast.io/'
+								uri='https://starblast.io'
 							)
 						]
 					)
